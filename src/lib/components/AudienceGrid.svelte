@@ -5,7 +5,7 @@
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>Who is TradersPost for?</h2>
+      <h2>Who is BidiinPost for?</h2>
       <p>Flexible automation for every type of trader and strategy builder.</p>
     </div>
     <div class="grid">

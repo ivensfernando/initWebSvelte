@@ -16,7 +16,9 @@
       </p>
       <div class="socials">
         {#each socials as social}
-          <a href="/" aria-label={social}>{social}</a>
+          <a href="/" aria-label={social}>
+            <span class="social-icon">{social.charAt(0)}</span>
+          </a>
         {/each}
       </div>
     </div>
@@ -81,6 +83,17 @@
     color: #e2e8f0;
     text-decoration: none;
     font-size: 0.9rem;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(226, 232, 240, 0.3);
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 0.85rem;
   }
 
   .columns {

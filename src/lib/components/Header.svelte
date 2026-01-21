@@ -69,20 +69,20 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--color-bg);
+    background: #fff;
     transition: box-shadow 0.2s ease, background 0.2s ease;
   }
 
   header.shadow {
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
   }
 
   .nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
     gap: 16px;
+    height: 56px;
   }
 
   .logo {
@@ -106,6 +106,7 @@
   .nav-links {
     display: none;
     gap: 20px;
+    justify-content: center;
   }
 
   .nav-links a {
@@ -118,6 +119,7 @@
   .nav-actions {
     display: none;
     gap: 12px;
+    justify-content: flex-end;
   }
 
   .menu-toggle {
@@ -134,6 +136,12 @@
     height: 2px;
     background: var(--color-text);
     display: block;
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      height: 64px;
+    }
   }
 
   @media (min-width: 1024px) {

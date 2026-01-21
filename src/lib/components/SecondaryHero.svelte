@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="preview">
-      <div class="screenshot">
+      <div class="screenshot dashboard-preview">
         <span>App screenshot</span>
       </div>
     </div>
@@ -27,7 +27,7 @@
   }
 
   .content h2 {
-    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-size: var(--h2);
     margin-bottom: 12px;
   }
 
@@ -45,7 +45,6 @@
 
   .screenshot {
     width: min(520px, 100%);
-    aspect-ratio: 4 / 3;
     border-radius: 24px;
     background: linear-gradient(135deg, #0f172a, #1d4ed8);
     color: #fff;
@@ -54,7 +53,7 @@
     font-weight: 600;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 900px) {
     .secondary-hero {
       grid-template-columns: 1fr 1fr;
     }

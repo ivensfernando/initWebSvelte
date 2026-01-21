@@ -22,7 +22,9 @@
         {/each}
       </div>
     {:else if step.mediaType === 'code'}
-      <pre><code>{step.codeSample}</code></pre>
+      <div class="code-card">
+        <pre><code>{step.codeSample}</code></pre>
+      </div>
     {:else if step.mediaType === 'logos-grid'}
       <div class="logo-grid">
         {#each step.logos as logo}
@@ -30,7 +32,7 @@
         {/each}
       </div>
     {:else if step.mediaType === 'screenshot'}
-      <div class="screenshot">
+      <div class="screenshot dashboard-preview">
         <span>Dashboard preview</span>
       </div>
     {/if}
@@ -41,22 +43,20 @@
 <style>
   .step-card {
     position: relative;
-    padding: 48px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(226, 232, 240, 0.6));
+    padding: clamp(24px, 4vw, 48px);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.7));
     display: grid;
     gap: 32px;
     overflow: hidden;
-  }
-
-  .step-card.reversed {
-    grid-template-columns: 1fr;
+    container-type: inline-size;
   }
 
   .step-content {
     display: grid;
     gap: 12px;
     z-index: 1;
+    padding-right: clamp(16px, 6vw, 96px);
   }
 
   .step-content h3 {
@@ -81,9 +81,10 @@
   }
 
   .logo-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 12px;
+    width: 100%;
   }
 
   .logo-chip {
@@ -95,11 +96,16 @@
     font-size: 0.85rem;
   }
 
+  .code-card {
+    width: min(360px, 100%);
+    margin: 0 auto;
+  }
+
   pre {
     background: #0f172a;
     color: #e2e8f0;
     padding: 24px;
-    border-radius: 16px;
+    border-radius: 14px;
     font-size: 0.85rem;
     box-shadow: var(--shadow-sm);
     overflow-x: auto;
@@ -107,7 +113,7 @@
 
   .logo-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 12px;
     width: 100%;
   }
@@ -123,7 +129,6 @@
 
   .screenshot {
     width: 100%;
-    aspect-ratio: 16 / 9;
     border-radius: 16px;
     background: linear-gradient(135deg, #1e3a8a, #0f172a);
     color: #fff;
@@ -134,15 +139,16 @@
 
   .watermark {
     position: absolute;
-    right: 24px;
-    top: 12px;
-    font-size: clamp(3rem, 8vw, 7rem);
+    right: 1rem;
+    top: 1rem;
+    font-size: clamp(56px, 8vw, 120px);
     font-weight: 700;
-    color: rgba(15, 23, 42, 0.08);
+    opacity: 0.06;
+    color: #0f172a;
     z-index: 0;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 900px) {
     .step-card {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: center;
@@ -154,6 +160,12 @@
 
     .step-card.reversed > * {
       direction: ltr;
+    }
+  }
+
+  @container (max-width: 600px) {
+    .step-card {
+      grid-template-columns: 1fr;
     }
   }
 

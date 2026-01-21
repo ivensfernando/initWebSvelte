@@ -1,6 +1,6 @@
 # Biidin Presentation Front-End
 
-This Svelte + Vite project renders a presentation-style front-end with image-first tasks, sectioned content, and controls to add or remove sections. All references to TradersPost are handled by Biidin in the copy.
+This Svelte + Vite project renders a presentation-style front-end with image-first tasks, sectioned content, and controls to add or remove sections. All references to BidiinPost are handled by Biidin in the copy.
 
 ## Quick start
 

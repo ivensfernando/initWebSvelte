@@ -12,7 +12,7 @@ export const navLinks = [
 export const hero = {
   title: 'Automated Trading',
   description:
-    'Turn your strategy signals into fully automated trades across stocks, crypto, and futures with TradersPost.',
+    'Turn your strategy signals into fully automated trades across stocks, crypto, and futures with BidiinPost.',
   emailPlaceholder: 'Enter your email',
   primaryCtaLabel: 'Register'
 };
@@ -36,9 +36,9 @@ export const steps = [
   },
   {
     number: '02',
-    title: 'Send Alerts to TradersPost',
+    title: 'Send Alerts to BidiinPost',
     body:
-      'Stream every alert to TradersPost in real time with secure webhook payloads.',
+      'Stream every alert to BidiinPost in real time with secure webhook payloads.',
     mediaType: 'code',
     codeSample: `{
   "ticker": "AAPL",
@@ -49,7 +49,7 @@ export const steps = [
   },
   {
     number: '03',
-    title: 'Connect to TradersPost',
+    title: 'Connect to BidiinPost',
     body:
       'Link your broker or exchange to automatically place trades the moment signals arrive.',
     mediaType: 'logos-grid',
@@ -129,16 +129,16 @@ export const socialProof = [
 export const comparisonGuides = [
   {
     title: 'Comparison Guides',
-    description: 'Evaluate TradersPost against other trading automation platforms.',
+    description: 'Evaluate BidiinPost against other trading automation platforms.',
     links: [
-      'TradersPost vs TradingView',
-      'TradersPost vs 3Commas',
-      'TradersPost vs SignalStack',
-      'TradersPost vs Composer',
-      'TradersPost vs TrendSpider',
-      'TradersPost vs Tickerly',
-      'TradersPost vs SignalStack Pro',
-      'TradersPost vs PineConnector'
+      'BidiinPost vs TradingView',
+      'BidiinPost vs 3Commas',
+      'BidiinPost vs SignalStack',
+      'BidiinPost vs Composer',
+      'BidiinPost vs TrendSpider',
+      'BidiinPost vs Tickerly',
+      'BidiinPost vs SignalStack Pro',
+      'BidiinPost vs PineConnector'
     ]
   }
 ];
@@ -155,7 +155,7 @@ export const journalingPlatforms = [
 export const testimonials = [
   {
     quote:
-      'TradersPost helped me automate every strategy without hiring a developer.',
+      'BidiinPost helped me automate every strategy without hiring a developer.',
     name: 'Alex Morgan'
   },
   {

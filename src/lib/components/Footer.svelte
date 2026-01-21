@@ -9,7 +9,7 @@
     <div class="brand">
       <div class="logo">
         <span class="logo-mark"></span>
-        <span>TradersPost</span>
+        <span>BidiinPost</span>
       </div>
       <p>
         Automate your trading across brokers and exchanges with a single, secure workflow.
@@ -35,7 +35,7 @@
   </div>
   <div class="container legal">
     <p>{legalDisclaimer}</p>
-    <span>© 2024 TradersPost. All rights reserved.</span>
+    <span>© 2024 BidiinPost. All rights reserved.</span>
   </div>
 </footer>
 

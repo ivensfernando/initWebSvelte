@@ -39,7 +39,7 @@
   <div class="container nav">
     <a class="logo" href="/">
       <span class="logo-mark" aria-hidden="true"></span>
-      <span>TradersPost</span>
+      <span>BidiinPost</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       {#each navLinks as link}

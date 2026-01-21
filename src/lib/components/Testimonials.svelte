@@ -8,7 +8,7 @@
   <div class="container">
     <div class="section-header">
       <h2>Why Customers Love Us</h2>
-      <p>Real stories from traders who rely on TradersPost daily.</p>
+      <p>Real stories from traders who rely on BidiinPost daily.</p>
     </div>
     <div class="testimonial-grid">
       {#each testimonials as testimonial}
@@ -24,7 +24,7 @@
             <div class="avatar">{testimonial.name.charAt(0)}</div>
             <div>
               <strong>{testimonial.name}</strong>
-              <div class="role">TradersPost Customer Review</div>
+              <div class="role">BidiinPost Customer Review</div>
             </div>
           </div>
         </div>

@@ -26,21 +26,25 @@
     display: grid;
     gap: 24px;
     margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    max-width: 720px;
+    margin-inline: auto;
   }
 
   .card {
     padding: 24px;
     border-radius: 16px;
     border: 1px solid #e2e8f0;
+    background: #fff;
     box-shadow: var(--shadow-sm);
     display: grid;
     gap: 12px;
   }
 
   .icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
     background: rgba(37, 99, 235, 0.12);
     color: var(--color-primary);
     display: grid;
@@ -54,9 +58,4 @@
     font-weight: 600;
   }
 
-  @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
 </style>

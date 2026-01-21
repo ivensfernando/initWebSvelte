@@ -25,6 +25,7 @@
     display: grid;
     gap: 20px;
     margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .feature-card {
@@ -34,6 +35,7 @@
     box-shadow: var(--shadow-sm);
     display: grid;
     gap: 8px;
+    height: 100%;
   }
 
   .feature-icon {
@@ -46,15 +48,9 @@
     place-items: center;
   }
 
-  @media (min-width: 640px) {
-    .feature-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   @media (min-width: 1024px) {
     .feature-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>

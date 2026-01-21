@@ -32,7 +32,14 @@
 </script>
 
 {#if open}
-  <div class="overlay" on:click={closeModal}></div>
+  <div
+    class="overlay"
+    role="button"
+    tabindex="0"
+    aria-label="Close video"
+    on:click={closeModal}
+    on:keydown={(event) => (event.key === 'Enter' || event.key === ' ') && closeModal()}
+  ></div>
   <div
     class="modal"
     role="dialog"

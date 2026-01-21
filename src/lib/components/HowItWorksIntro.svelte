@@ -16,7 +16,7 @@
   }
 
   .intro h2 {
-    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-size: var(--h2);
     margin-bottom: 16px;
   }
 

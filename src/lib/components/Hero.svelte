@@ -15,7 +15,7 @@
       return;
     }
 
-    localStorage.setItem('traderspost_email', email);
+    localStorage.setItem('bidiinpost_email', email);
     toastMessage = "Thanks! We'll reach out soon.";
     toastVisible = true;
     email = '';
@@ -30,7 +30,7 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
-      <p class="eyebrow">Automate from signal to execution</p>
+      <p class="eyebrow">AUTOMATE FROM SIGNAL TO EXECUTION</p>
       <h1>{hero.title}</h1>
       <p class="hero-description">{hero.description}</p>
       <form
@@ -39,13 +39,18 @@
         aria-label="Email capture"
       >
         <label class="sr-only" for="hero-email">Email address</label>
-        <input
-          id="hero-email"
-          type="email"
-          placeholder={hero.emailPlaceholder}
-          bind:value={email}
-          aria-invalid={error ? 'true' : 'false'}
-        />
+        <div class="input-shell">
+          <input
+            id="hero-email"
+            type="email"
+            placeholder={hero.emailPlaceholder}
+            bind:value={email}
+            aria-invalid={error ? 'true' : 'false'}
+          />
+          <span class="input-icon" aria-hidden="true">
+            ✉
+          </span>
+        </div>
         <button class="btn primary" type="submit">{hero.primaryCtaLabel}</button>
       </form>
       {#if error}
@@ -56,7 +61,7 @@
       </p>
     </div>
     <div class="hero-media">
-      <div class="video-preview">
+      <div class="video-preview video-card">
         <span class="play-button" aria-hidden="true">▶</span>
         <div class="video-caption">Watch the 90-second platform tour</div>
       </div>
@@ -84,7 +89,7 @@
   }
 
   .hero-content h1 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: var(--h1);
     margin-bottom: 16px;
     letter-spacing: -0.02em;
   }
@@ -92,7 +97,7 @@
   .hero-description {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 24px;
-    font-size: 1.1rem;
+    font-size: clamp(15px, 1.4vw, 18px);
   }
 
   .eyebrow {
@@ -105,15 +110,30 @@
 
   .hero-form {
     display: flex;
+    flex-direction: column;
     gap: 12px;
-    flex-wrap: wrap;
   }
 
-  .hero-form input {
+  .input-shell {
+    position: relative;
     flex: 1 1 240px;
+  }
+
+  .input-shell input {
+    width: 100%;
     border-radius: 999px;
     border: none;
-    padding: 14px 18px;
+    padding: 12px 44px 12px 20px;
+    font-size: 1rem;
+  }
+
+  .input-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(15, 23, 42, 0.5);
+    font-size: 1rem;
   }
 
   .form-error {
@@ -133,14 +153,14 @@
   }
 
   .video-preview {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(30, 58, 138, 0.9));
-    border-radius: 24px;
-    width: min(480px, 100%);
-    aspect-ratio: 4 / 3;
+    background: #0f172a;
+    border-radius: 20px;
+    width: min(520px, 100%);
     display: grid;
     place-items: center;
     position: relative;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+    overflow: hidden;
   }
 
   .play-button {
@@ -173,24 +193,25 @@
     border-radius: 12px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 640px) {
+    .hero-form {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 900px) {
     .hero-grid {
       grid-template-columns: 1.2fr 1fr;
     }
   }
+  .hero-form button {
+    width: 100%;
+  }
 
-  @media (max-width: 640px) {
-    .hero {
-      padding: 64px 0;
-    }
-
-    .hero-form {
-      flex-direction: column;
-    }
-
-    .hero-form input,
+  @media (min-width: 640px) {
     .hero-form button {
-      width: 100%;
+      width: auto;
     }
   }
 </style>

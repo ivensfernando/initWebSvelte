@@ -38,6 +38,7 @@
     display: grid;
     gap: 24px;
     margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .testimonial-card {
@@ -88,9 +89,4 @@
     color: var(--color-muted);
   }
 
-  @media (min-width: 1024px) {
-    .testimonial-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
 </style>

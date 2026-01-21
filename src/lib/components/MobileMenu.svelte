@@ -32,10 +32,6 @@
   }
 </script>
 
-{#if menuOpen}
-  <div class="overlay" on:click={closeMenu}></div>
-{/if}
-
 <div class:open={menuOpen} class="panel" bind:this={panel} aria-hidden={!menuOpen}>
   <nav aria-label="Mobile">
     {#each navLinks as link}
@@ -49,33 +45,23 @@
 </div>
 
 <style>
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.4);
-    z-index: 40;
-  }
-
   .panel {
-    position: fixed;
-    top: 72px;
-    left: 16px;
-    right: 16px;
-    background: var(--color-bg);
-    border-radius: 16px;
-    padding: 24px;
+    width: 100%;
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+    padding: 24px clamp(16px, 4vw, 32px) 32px;
     display: grid;
     gap: 20px;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
-    transform: translateY(-10px);
+    box-shadow: 0 16px 24px rgba(15, 23, 42, 0.08);
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
     pointer-events: none;
     transition: all 0.2s ease;
-    z-index: 50;
   }
 
   .panel.open {
-    transform: translateY(0);
+    max-height: 500px;
     opacity: 1;
     pointer-events: all;
   }
@@ -97,8 +83,7 @@
   }
 
   @media (min-width: 1024px) {
-    .panel,
-    .overlay {
+    .panel {
       display: none;
     }
   }

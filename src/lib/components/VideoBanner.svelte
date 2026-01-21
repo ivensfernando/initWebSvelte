@@ -35,9 +35,9 @@
   .banner {
     width: 100%;
     border: none;
-    border-radius: 24px;
-    padding: 32px;
-    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    border-radius: 28px;
+    padding: clamp(24px, 4vw, 40px);
+    background: #0f172a;
     color: #fff;
     display: flex;
     align-items: center;
@@ -60,6 +60,7 @@
     display: grid;
     place-items: center;
     font-size: 1.5rem;
+    flex-shrink: 0;
   }
 
   .banner-label {

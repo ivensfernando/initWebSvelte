@@ -30,7 +30,7 @@
   .logos {
     display: grid;
     gap: 12px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
   .logo {
@@ -60,10 +60,6 @@
   @media (min-width: 1024px) {
     .journaling {
       grid-template-columns: 1fr 1fr;
-    }
-
-    .logos {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 </style>

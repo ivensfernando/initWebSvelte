@@ -53,24 +53,26 @@
     window.removeEventListener('popstate', updatePath);
   });
 
-  const isActive = (href) => currentPath === href;
+  const isActive = (href) =>
+    href === '/assets' ? currentPath.startsWith('/assets') : currentPath === href;
 </script>
 
 <header class:shadow={hasShadow}>
   <div class="container nav">
-    <a class="logo" href="/" data-testid="brand-logo">
+    <a class="logo" href="/" data-testid="brand">
       <img
         class="logo-mark"
         src="/brand/logo.png"
         alt="BidiinPost logo"
-        data-testid="brand-logo-img"
+        data-testid="brand-logo"
       />
+      <span class="logo-text">BidiinPost</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       {#each navLinks as link}
         <a
           href={link.href}
-          class:active={isActive(link.href)}
+          class:is-active={isActive(link.href)}
           on:click={(event) => handleNavClick(event, link.href)}
         >
           {link.label}
@@ -92,7 +94,7 @@
       <span></span>
     </button>
   </div>
-  <MobileMenu {menuOpen} on:close={closeMenu} {navLinks} />
+  <MobileMenu {menuOpen} on:close={closeMenu} {navLinks} onNavigate={handleNavClick} />
 </header>
 
 <style>
@@ -113,10 +115,10 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 64px;
-    min-height: 64px;
+    height: 60px;
+    min-height: 60px;
     padding-block: 8px;
-    padding-inline: 12px;
+    padding-inline: 16px;
   }
 
   .logo {
@@ -124,13 +126,20 @@
     align-items: center;
     color: var(--color-text);
     text-decoration: none;
+    gap: 8px;
+    font-weight: 700;
   }
 
   .logo-mark {
-    width: 40px;
-    height: 40px;
+    width: auto;
+    height: 24px;
     display: inline-block;
     object-fit: contain;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
   }
 
   .nav-links {
@@ -154,6 +163,9 @@
   .nav-links a.active {
     color: var(--brand-500);
     font-weight: 600;
+    background: color-mix(in srgb, var(--brand-500) 12%, transparent);
+    padding: 6px 12px;
+    border-radius: 999px;
   }
 
   .nav-actions {
@@ -187,14 +199,13 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 72px;
-      min-height: 72px;
-      padding-inline: 16px;
+      height: 64px;
+      min-height: 64px;
+      padding-inline: 20px;
     }
 
     .logo-mark {
-      width: 56px;
-      height: 56px;
+      height: 32px;
     }
   }
 

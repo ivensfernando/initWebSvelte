@@ -1,7 +1,14 @@
 <script>
-  import { footerColumns, legalDisclaimer } from '../content/home.js';
+  import { footerColumns, footerDescription, legalDisclaimer } from '../content/home.js';
 
-  const socials = ['Facebook', 'Instagram', 'Twitter/X', 'GitHub', 'YouTube', 'Discord'];
+  const socials = [
+    { label: 'Facebook', href: '/' },
+    { label: 'Instagram', href: '/' },
+    { label: 'Twitter/X', href: '/' },
+    { label: 'GitHub', href: '/' },
+    { label: 'YouTube', href: '/' },
+    { label: 'Discord', href: '/' }
+  ];
 </script>
 
 <footer class="footer">
@@ -11,13 +18,11 @@
         <span class="logo-mark"></span>
         <span>BidiinPost</span>
       </div>
-      <p>
-        Automate your trading across brokers and exchanges with a single, secure workflow.
-      </p>
+      <p>{footerDescription}</p>
       <div class="socials">
         {#each socials as social}
-          <a href="/" aria-label={social}>
-            <span class="social-icon">{social.charAt(0)}</span>
+          <a href={social.href} aria-label={social.label}>
+            <span class="social-icon">{social.label.charAt(0)}</span>
           </a>
         {/each}
       </div>
@@ -43,7 +48,7 @@
 
 <style>
   .footer {
-    background: linear-gradient(135deg, #1b2d22, #2f4f3a);
+    background: linear-gradient(135deg, var(--brand-900), var(--brand-700));
     color: #f2f7ef;
     padding: 64px 0 40px;
   }
@@ -69,7 +74,7 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: var(--color-primary);
+    background: var(--brand-gradient);
     display: inline-block;
     border: 2px solid #000;
   }

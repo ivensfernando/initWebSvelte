@@ -88,13 +88,13 @@ main {
 
 .btn.secondary {
   background: transparent;
-  color: var(--btn-grad-end);
-  border: 1px solid var(--btn-grad-end);
+  color: var(--brand-500);
+  border: 1px solid var(--brand-500);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn.secondary:hover {
-  background: var(--btn-grad-end);
+  background: var(--brand-500);
   color: #fff;
 }
 

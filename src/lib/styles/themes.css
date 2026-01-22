@@ -12,7 +12,6 @@
 }
 
 [data-theme='green'] {
-  --btn-grad-start: #22c55e;
-  --btn-grad-end: #166534;
+  --brand-gradient: linear-gradient(90deg, var(--brand-500), #166534);
   --btn-shadow: 0 10px 20px rgba(22, 163, 74, 0.28);
 }

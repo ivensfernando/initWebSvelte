@@ -193,5 +193,8 @@ export const footerColumns = [
   }
 ];
 
+export const footerDescription =
+  'TradersPost can automate stocks, crypto, options and futures trading strategies from TradingView or TrendSpider in popular brokers like Tradovate, TradeStation, Coinbase, Interactive Brokers and Alpaca.';
+
 export const legalDisclaimer =
   'Trading involves substantial risk and is not suitable for all investors. Automated trading does not guarantee profits and can amplify losses. Past performance is not indicative of future results. You are responsible for evaluating the merits and risks associated with the use of any information provided on this site before making any decisions based on such information.';

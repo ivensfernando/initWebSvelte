@@ -1,6 +1,5 @@
 <script>
-  import { createEventDispatcher, tick } from 'svelte';
-  import { page } from '$app/stores';
+  import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte';
   import { createFocusTrap } from '../utils/focusTrap.js';
 
   export let menuOpen = false;
@@ -9,6 +8,7 @@
   const dispatch = createEventDispatcher();
   let panel;
   let releaseFocus = () => {};
+  let currentPath = '';
 
   const closeMenu = () => {
     dispatch('close');
@@ -20,7 +20,19 @@
     }
   };
 
-  $: currentPath = $page.url.pathname;
+  const updatePath = () => {
+    currentPath = window.location.pathname;
+  };
+
+  onMount(() => {
+    updatePath();
+    window.addEventListener('popstate', updatePath);
+  });
+
+  onDestroy(() => {
+    window.removeEventListener('popstate', updatePath);
+  });
+
   const isActive = (href) => currentPath === href;
 
   $: if (menuOpen) {

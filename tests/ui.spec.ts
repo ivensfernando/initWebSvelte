@@ -26,8 +26,37 @@ test.describe('Visual styling expectations', () => {
     await page.goto('/');
 
     const logoMark = page.locator('.logo-mark').first();
-    await expect(logoMark).toHaveCSS('width', '115px');
-    await expect(logoMark).toHaveCSS('height', '115px');
+    await expect(logoMark).toHaveCSS('width', '140px');
+    await expect(logoMark).toHaveCSS('height', '140px');
+  });
+
+  test('navigation height and font sizes are compact', async ({ page }) => {
+    await page.goto('/');
+
+    const navContainer = page.locator('header .nav');
+    await expect(navContainer).toHaveCSS('height', '120px');
+
+    const navLink = page.locator('.nav-links a').first();
+    const navFontSize = await navLink.evaluate((node) =>
+      window.getComputedStyle(node).fontSize
+    );
+    const navFontSizeValue = Number.parseFloat(navFontSize);
+    expect(navFontSizeValue).toBeGreaterThan(12);
+    expect(navFontSizeValue).toBeLessThan(16);
+  });
+
+  test('mobile menu uses smaller link typography', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 720 });
+    await page.goto('/');
+
+    await page.getByRole('button', { name: 'Toggle navigation' }).click();
+    const mobileLink = page.locator('nav[aria-label="Mobile"] a').first();
+    const mobileFontSize = await mobileLink.evaluate((node) =>
+      window.getComputedStyle(node).fontSize
+    );
+    const mobileFontSizeValue = Number.parseFloat(mobileFontSize);
+    expect(mobileFontSizeValue).toBeGreaterThan(12);
+    expect(mobileFontSizeValue).toBeLessThan(16);
   });
 });
 

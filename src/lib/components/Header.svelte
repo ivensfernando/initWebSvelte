@@ -1,6 +1,5 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { page } from '$app/stores';
   import { navLinks } from '../content/home.js';
   import { theme } from '../stores/theme';
   import MobileMenu from './MobileMenu.svelte';
@@ -8,9 +7,14 @@
   let menuOpen = false;
   let hasShadow = false;
   let lastFocused;
+  let currentPath = '';
 
   const updateShadow = () => {
     hasShadow = window.scrollY > 8;
+  };
+
+  const updatePath = () => {
+    currentPath = window.location.pathname;
   };
 
   const toggleMenu = () => {
@@ -29,14 +33,16 @@
 
   onMount(() => {
     updateShadow();
+    updatePath();
     window.addEventListener('scroll', updateShadow, { passive: true });
+    window.addEventListener('popstate', updatePath);
   });
 
   onDestroy(() => {
     window.removeEventListener('scroll', updateShadow);
+    window.removeEventListener('popstate', updatePath);
   });
 
-  $: currentPath = $page.url.pathname;
   const isActive = (href) => currentPath === href;
 </script>
 

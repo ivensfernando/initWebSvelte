@@ -1,6 +1,6 @@
 <script>
   import AppLogoChip from './AppLogoChip.svelte';
-  import logos from '$lib/content/logo-registry.json';
+  import logos from '../content/logo-registry.json';
 </script>
 
 <section class="section">

@@ -50,7 +50,6 @@
   <div class="container nav">
     <a class="logo" href="/">
       <img class="logo-mark" src="/logos/bidiinlogo.png" alt="BidiinPost logo" />
-      <span>BidiinPost</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       {#each navLinks as link, index}
@@ -107,38 +106,38 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 56px;
+    height: 72px;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-weight: 700;
     color: var(--color-text);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .logo-mark {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     display: inline-block;
     object-fit: contain;
   }
 
   .nav-links {
     display: none;
-    gap: 20px;
+    gap: 32px;
     justify-content: center;
   }
 
   .nav-links a {
     color: var(--color-muted);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     transition: color 0.2s ease;
   }
 
@@ -196,7 +195,7 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 64px;
+      height: 80px;
     }
   }
 

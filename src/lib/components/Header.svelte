@@ -113,6 +113,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
+    height: 64px;
     min-height: 64px;
     padding-block: 8px;
     padding-inline: 12px;
@@ -126,8 +127,8 @@
   }
 
   .logo-mark {
-    height: clamp(40px, 5vw, 72px);
-    width: auto;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     object-fit: contain;
   }
@@ -186,12 +187,14 @@
 
   @media (min-width: 768px) {
     .nav {
+      height: 72px;
       min-height: 72px;
       padding-inline: 16px;
     }
 
     .logo-mark {
-      height: clamp(56px, 4vw, 88px);
+      width: 56px;
+      height: 56px;
     }
   }
 

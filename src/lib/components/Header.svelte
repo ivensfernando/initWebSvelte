@@ -95,7 +95,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: linear-gradient(135deg, #e7f5e1, #cfe8c5);
+    background: #fff;
     transition: box-shadow 0.2s ease, background 0.2s ease;
   }
 
@@ -108,7 +108,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 124px;
+    height: 144px;
   }
 
   .logo {
@@ -138,7 +138,7 @@
   .nav-links a {
     color: #000;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     transition: color 0.2s ease;
   }
@@ -177,7 +177,7 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 140px;
+      height: 160px;
     }
   }
 

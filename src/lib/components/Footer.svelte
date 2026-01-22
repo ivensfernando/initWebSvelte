@@ -43,8 +43,8 @@
 
 <style>
   .footer {
-    background: linear-gradient(135deg, #0b132b, #111827);
-    color: #e2e8f0;
+    background: linear-gradient(135deg, #1b2d22, #2f4f3a);
+    color: #f2f7ef;
     padding: 64px 0 40px;
   }
 
@@ -55,7 +55,7 @@
 
   .brand p {
     margin: 16px 0;
-    color: rgba(226, 232, 240, 0.7);
+    color: rgba(242, 247, 239, 0.75);
   }
 
   .logo {
@@ -71,6 +71,7 @@
     border-radius: 10px;
     background: var(--color-primary);
     display: inline-block;
+    border: 2px solid #000;
   }
 
   .socials {
@@ -80,7 +81,7 @@
   }
 
   .socials a {
-    color: #e2e8f0;
+    color: #f2f7ef;
     text-decoration: none;
     font-size: 0.9rem;
   }
@@ -89,7 +90,8 @@
     width: 32px;
     height: 32px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid #000;
     display: grid;
     place-items: center;
     font-weight: 600;
@@ -114,7 +116,7 @@
   }
 
   .columns a {
-    color: rgba(226, 232, 240, 0.7);
+    color: rgba(242, 247, 239, 0.75);
     text-decoration: none;
     font-size: 0.9rem;
   }
@@ -122,7 +124,7 @@
   .legal {
     margin-top: 40px;
     font-size: 0.85rem;
-    color: rgba(226, 232, 240, 0.6);
+    color: rgba(242, 247, 239, 0.65);
     display: grid;
     gap: 12px;
   }

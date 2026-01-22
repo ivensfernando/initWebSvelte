@@ -45,7 +45,8 @@
     background: #fff;
     border-radius: 20px;
     padding: 24px;
-    box-shadow: 0 20px 36px rgba(15, 23, 42, 0.12);
+    border: 1px solid #000;
+    box-shadow: 0 20px 36px rgba(0, 0, 0, 0.2);
     display: grid;
     gap: 16px;
   }

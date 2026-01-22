@@ -75,7 +75,8 @@
     padding: 24px clamp(16px, 4vw, 32px) 32px;
     display: grid;
     gap: 20px;
-    box-shadow: 0 16px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #000;
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.18);
     max-height: 0;
     overflow: hidden;
     opacity: 0;

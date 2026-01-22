@@ -48,6 +48,7 @@
     position: relative;
     padding: clamp(24px, 4vw, 48px);
     border-radius: 20px;
+    border: 1px solid #000;
     display: grid;
     gap: 32px;
     overflow: hidden;
@@ -56,8 +57,8 @@
 
   .step-bg {
     background:
-      radial-gradient(1200px circle at top right, rgba(0, 150, 255, 0.08), transparent 40%),
-      linear-gradient(135deg, #f7fbff, #eef4fb);
+      radial-gradient(1200px circle at top right, rgba(47, 79, 58, 0.12), transparent 40%),
+      linear-gradient(135deg, #f4fbef, #e3f1db);
   }
 
   .step-bg::after {
@@ -111,8 +112,8 @@
   }
 
   pre {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #1b2d22;
+    color: #eaf5e1;
     padding: 24px;
     border-radius: 14px;
     font-size: 0.85rem;
@@ -130,7 +131,7 @@
   .screenshot {
     width: 100%;
     border-radius: 24px;
-    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    background: linear-gradient(135deg, #3f5e49, #1b2d22);
     color: #fff;
     display: grid;
     place-items: center;

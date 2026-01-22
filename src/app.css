@@ -2,8 +2,9 @@
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--color-text);
   background: var(--color-bg);
-  --color-hero: #0b132b;
-  --shadow-sm: 0 12px 24px rgba(15, 23, 42, 0.08);
+  --color-hero: #1b2d22;
+  --shadow-sm: 0 12px 24px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.28);
   --h1: clamp(28px, 3vw, 52px);
   --h2: clamp(22px, 2vw, 34px);
   --body: clamp(14px, 1.2vw, 16px);
@@ -76,13 +77,14 @@ main {
 .btn.primary {
   background: var(--color-primary);
   color: #fff;
-  box-shadow: 0 12px 24px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  border: 1px solid #000;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
 }
 
 .btn.secondary {
   background: #fff;
   color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  border: 1px solid #000;
 }
 
 .btn.ghost {

@@ -32,6 +32,7 @@
     background: #fff;
     border-radius: 16px;
     padding: 20px;
+    border: 1px solid #000;
     box-shadow: var(--shadow-sm);
     display: grid;
     gap: 8px;
@@ -51,7 +52,7 @@
 
   .feature-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.22);
   }
 
   @media (min-width: 1024px) {

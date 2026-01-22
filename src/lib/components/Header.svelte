@@ -1,7 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
   import { navLinks } from '../content/home.js';
-  import { theme } from '../stores/theme';
   import MobileMenu from './MobileMenu.svelte';
 
   let menuOpen = false;
@@ -63,14 +62,6 @@
       {/each}
     </nav>
     <div class="nav-actions">
-      <div class="theme-switch">
-        <button class="theme-btn" on:click={() => theme.set('green')} type="button">
-          Green Mode
-        </button>
-        <button class="theme-btn" on:click={() => theme.set('blue')} type="button">
-          Blue Mode
-        </button>
-      </div>
       <a class="btn secondary" href="/login">Login</a>
       <a class="btn primary" href="/register">Register</a>
     </div>
@@ -98,7 +89,7 @@
   }
 
   header.shadow {
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   }
 
   .nav {
@@ -106,7 +97,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 72px;
+    height: 84px;
   }
 
   .logo {
@@ -120,9 +111,10 @@
   }
 
   .logo-mark {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    border: 2px solid #000;
     display: inline-block;
     object-fit: contain;
   }
@@ -161,22 +153,6 @@
     align-items: center;
   }
 
-  .theme-switch {
-    display: flex;
-    gap: 8px;
-  }
-
-  .theme-btn {
-    border: 1px solid rgba(15, 23, 42, 0.2);
-    background: #fff;
-    color: var(--color-text);
-    border-radius: 999px;
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
   .menu-toggle {
     border: none;
     background: transparent;
@@ -195,7 +171,7 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 80px;
+      height: 96px;
     }
   }
 

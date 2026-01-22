@@ -67,20 +67,21 @@
   .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 60;
   }
 
   .modal {
     position: fixed;
     inset: 10% 12%;
-    background: #0f172a;
+    background: #1b2d22;
     border-radius: 20px;
     padding: 24px;
     z-index: 70;
     display: grid;
     gap: 16px;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+    border: 1px solid #000;
+    box-shadow: var(--shadow-lg);
   }
 
   .close {

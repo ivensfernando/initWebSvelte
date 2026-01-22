@@ -1,12 +1,12 @@
 export const tokens = {
   colors: {
     bg: '#ffffff',
-    text: '#0f172a',
-    muted: '#6b7280',
-    primary: '#2563eb',
+    text: '#1b2d22',
+    muted: '#3f5e49',
+    primary: '#2f4f3a',
     primaryContrast: '#ffffff',
-    surface: '#f8fafc',
-    heroDark: '#0b132b'
+    surface: '#e4f3dc',
+    heroDark: '#1b2d22'
   },
   typography: {
     base: '16px',

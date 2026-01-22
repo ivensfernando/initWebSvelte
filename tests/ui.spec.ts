@@ -22,27 +22,57 @@ test.describe('Visual styling expectations', () => {
     await expect(playButton).toHaveCSS('height', '64px');
   });
 
-  test('header logo sizing stays consistent', async ({ page }) => {
+  test('header shows only the logo icon and keeps compact sizing', async ({ page }) => {
     await page.goto('/');
 
-    const logoMark = page.locator('.logo-mark').first();
-    await expect(logoMark).toHaveCSS('width', '140px');
-    await expect(logoMark).toHaveCSS('height', '140px');
-  });
+    const header = page.locator('header');
+    await expect(header).not.toContainText('BidiinPost');
 
-  test('navigation height and font sizes are compact', async ({ page }) => {
-    await page.goto('/');
+    const logoLink = page.getByTestId('brand-logo');
+    const logoImg = page.getByTestId('brand-logo-img');
+    await expect(logoLink).toHaveAttribute('href', '/');
+    await expect(logoImg).toHaveAttribute('src', '/brand/logo.png');
+    await expect(logoImg).toBeVisible();
 
     const navContainer = page.locator('header .nav');
-    await expect(navContainer).toHaveCSS('height', '120px');
-
-    const navLink = page.locator('.nav-links a').first();
-    const navFontSize = await navLink.evaluate((node) =>
-      window.getComputedStyle(node).fontSize
+    const navHeight = await navContainer.evaluate((node) =>
+      Number.parseFloat(window.getComputedStyle(node).height)
     );
-    const navFontSizeValue = Number.parseFloat(navFontSize);
-    expect(navFontSizeValue).toBeGreaterThan(12);
-    expect(navFontSizeValue).toBeLessThan(16);
+    expect(navHeight).toBeLessThanOrEqual(60);
+  });
+
+  test('header logo sizing and position follow the spec', async ({ page }) => {
+    await page.goto('/');
+
+    const logoImg = page.getByTestId('brand-logo-img');
+    await logoImg.waitFor();
+
+    const desktopBox = await logoImg.boundingBox();
+    expect(desktopBox).not.toBeNull();
+    if (desktopBox) {
+      expect(desktopBox.height).toBeGreaterThanOrEqual(40);
+      expect(desktopBox.x).toBeLessThanOrEqual(20);
+    }
+
+    await page.setViewportSize({ width: 375, height: 720 });
+    await page.goto('/');
+
+    const mobileBox = await logoImg.boundingBox();
+    expect(mobileBox).not.toBeNull();
+    if (mobileBox) {
+      expect(mobileBox.height).toBeGreaterThanOrEqual(30);
+    }
+  });
+
+  test('header snapshots match at desktop and mobile sizes', async ({ page }) => {
+    await page.goto('/');
+
+    const header = page.locator('header');
+    await expect(header).toHaveScreenshot('header-desktop.png');
+
+    await page.setViewportSize({ width: 375, height: 720 });
+    await page.goto('/');
+    await expect(header).toHaveScreenshot('header-mobile.png');
   });
 
   test('mobile menu uses smaller link typography', async ({ page }) => {

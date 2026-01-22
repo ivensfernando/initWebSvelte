@@ -58,9 +58,13 @@
 
 <header class:shadow={hasShadow}>
   <div class="container nav">
-    <a class="logo" href="/">
-      <img class="logo-mark" src="/logos/bidiinlogo.png" alt="BidiinPost logo" />
-      <span class="logo-text">BidiinPost</span>
+    <a class="logo" href="/" data-testid="brand-logo">
+      <img
+        class="logo-mark"
+        src="/brand/logo.png"
+        alt="BidiinPost logo"
+        data-testid="brand-logo-img"
+      />
     </a>
     <nav class="nav-links" aria-label="Primary">
       {#each navLinks as link}
@@ -112,13 +116,12 @@
     height: 52px;
     min-height: 52px;
     padding-block: 6px;
+    padding-inline: 12px;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-weight: 700;
     color: var(--color-text);
     text-decoration: none;
   }
@@ -126,14 +129,8 @@
   .logo-mark {
     width: 32px;
     height: 32px;
-    border-radius: 8px;
     display: inline-block;
     object-fit: contain;
-  }
-
-  .logo-text {
-    font-size: 1rem;
-    font-weight: 600;
   }
 
   .nav-links {
@@ -192,15 +189,12 @@
     .nav {
       height: 56px;
       min-height: 56px;
+      padding-inline: 16px;
     }
 
     .logo-mark {
-      width: 40px;
-      height: 40px;
-    }
-
-    .logo-text {
-      font-size: 1.125rem;
+      width: 44px;
+      height: 44px;
     }
   }
 
@@ -208,10 +202,6 @@
     .nav-links,
     .nav-actions {
       display: flex;
-    }
-
-    .logo-text {
-      font-size: 1.25rem;
     }
 
     .menu-toggle {

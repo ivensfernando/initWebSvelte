@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, createEventDispatcher } from 'svelte';
   import { navLinks } from '../content/home.js';
   import MobileMenu from './MobileMenu.svelte';
 
@@ -7,6 +7,7 @@
   let hasShadow = false;
   let lastFocused;
   let currentPath = '';
+  const dispatch = createEventDispatcher();
 
   const updateShadow = () => {
     hasShadow = window.scrollY > 8;
@@ -30,6 +31,16 @@
     }
   };
 
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+    if (currentPath !== href) {
+      window.history.pushState({}, '', href);
+      currentPath = href;
+      dispatch('navigate', { path: href });
+    }
+    closeMenu();
+  };
+
   onMount(() => {
     updateShadow();
     updatePath();
@@ -51,11 +62,11 @@
       <img class="logo-mark" src="/logos/bidiinlogo.png" alt="BidiinPost logo" />
     </a>
     <nav class="nav-links" aria-label="Primary">
-      {#each navLinks as link, index}
+      {#each navLinks as link}
         <a
           href={link.href}
           class:active={isActive(link.href)}
-          class:emphasis={index === 0 && !isActive(link.href)}
+          on:click={(event) => handleNavClick(event, link.href)}
         >
           {link.label}
         </a>
@@ -84,7 +95,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: #fff;
+    background: linear-gradient(135deg, #e7f5e1, #cfe8c5);
     transition: box-shadow 0.2s ease, background 0.2s ease;
   }
 
@@ -97,7 +108,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 84px;
+    height: 124px;
   }
 
   .logo {
@@ -111,10 +122,9 @@
   }
 
   .logo-mark {
-    width: 64px;
-    height: 64px;
+    width: 115px;
+    height: 115px;
     border-radius: 14px;
-    border: 2px solid #000;
     display: inline-block;
     object-fit: contain;
   }
@@ -126,7 +136,7 @@
   }
 
   .nav-links a {
-    color: var(--color-muted);
+    color: #000;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
@@ -134,16 +144,12 @@
   }
 
   .nav-links a:hover {
-    color: var(--color-primary);
+    color: #000;
   }
 
   .nav-links a.active {
     color: var(--color-primary);
     font-weight: 600;
-  }
-
-  .nav-links a.emphasis {
-    color: color-mix(in srgb, var(--color-primary) 80%, transparent);
   }
 
   .nav-actions {
@@ -165,13 +171,13 @@
   .menu-toggle span {
     width: 24px;
     height: 2px;
-    background: var(--color-text);
+    background: #000;
     display: block;
   }
 
   @media (min-width: 768px) {
     .nav {
-      height: 96px;
+      height: 140px;
     }
   }
 

@@ -26,17 +26,16 @@
     display: grid;
     gap: 24px;
     margin-top: 32px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    max-width: 720px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    max-width: 900px;
     margin-inline: auto;
   }
 
   .card {
     padding: 24px;
     border-radius: 16px;
-    border: 1px solid #e2e8f0;
     background: #fff;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
     display: grid;
     gap: 12px;
   }
@@ -45,7 +44,7 @@
     width: 32px;
     height: 32px;
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.12);
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
     color: var(--color-primary);
     display: grid;
     place-items: center;
@@ -56,6 +55,12 @@
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
 </style>

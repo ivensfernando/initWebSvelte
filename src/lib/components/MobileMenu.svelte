@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher, tick } from 'svelte';
+  import { page } from '$app/stores';
   import { createFocusTrap } from '../utils/focusTrap.js';
 
   export let menuOpen = false;
@@ -19,6 +20,9 @@
     }
   };
 
+  $: currentPath = $page.url.pathname;
+  const isActive = (href) => currentPath === href;
+
   $: if (menuOpen) {
     tick().then(() => {
       releaseFocus = createFocusTrap(panel);
@@ -34,8 +38,15 @@
 
 <div class:open={menuOpen} class="panel" bind:this={panel} aria-hidden={!menuOpen}>
   <nav aria-label="Mobile">
-    {#each navLinks as link}
-      <a href={link.href} on:click={closeMenu}>{link.label}</a>
+    {#each navLinks as link, index}
+      <a
+        href={link.href}
+        class:active={isActive(link.href)}
+        class:emphasis={index === 0 && !isActive(link.href)}
+        on:click={closeMenu}
+      >
+        {link.label}
+      </a>
     {/each}
   </nav>
   <div class="actions">
@@ -72,9 +83,22 @@
   }
 
   nav a {
-    color: var(--color-text);
+    color: var(--color-muted);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: var(--color-primary);
+  }
+
+  nav a.active {
+    color: var(--color-primary);
+  }
+
+  nav a.emphasis {
+    color: color-mix(in srgb, var(--color-primary) 80%, transparent);
   }
 
   .actions {

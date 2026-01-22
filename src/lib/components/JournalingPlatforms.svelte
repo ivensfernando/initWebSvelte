@@ -1,5 +1,6 @@
 <script>
-  import { journalingPlatforms } from '../content/home.js';
+  import AppLogoChip from './AppLogoChip.svelte';
+  import logos from '$lib/content/logo-registry.json';
 </script>
 
 <section class="section">
@@ -13,8 +14,8 @@
       </div>
     </div>
     <div class="logos">
-      {#each journalingPlatforms as platform}
-        <div class="logo">{platform}</div>
+      {#each logos.journals as platform}
+        <AppLogoChip name={platform.name} src={platform.src} />
       {/each}
     </div>
   </div>
@@ -30,16 +31,7 @@
   .logos {
     display: grid;
     gap: 12px;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .logo {
-    background: #fff;
-    padding: 16px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    font-weight: 600;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
   .cta-row {

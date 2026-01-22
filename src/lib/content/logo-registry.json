@@ -1,0 +1,30 @@
+{
+  "signalSources": [
+    { "key": "tradingview", "name": "TradingView", "src": "/logos/tradingview.svg", "type": "signal_source" },
+    { "key": "trendspider", "name": "TrendSpider", "src": "/logos/trendspider.svg", "type": "signal_source" },
+    { "key": "luxalgo", "name": "LuxAlgo", "src": "/logos/luxalgo.svg", "type": "signal_source" },
+    { "key": "quantconnect", "name": "QuantConnect", "src": "/logos/quantconnect.svg", "type": "signal_source" }
+  ],
+  "connections": [
+    { "key": "tradestation", "name": "TradeStation", "src": "/logos/tradestation.svg", "type": "broker" },
+    { "key": "tradier", "name": "Tradier", "src": "/logos/tradier.svg", "type": "broker" },
+    { "key": "tda", "name": "TDA", "src": "/logos/tda.svg", "type": "broker" },
+    { "key": "alpaca", "name": "Alpaca", "src": "/logos/alpaca.svg", "type": "broker" },
+    { "key": "interactivebrokers", "name": "Interactive Brokers", "src": "/logos/interactivebrokers.svg", "type": "broker" },
+    { "key": "coinbase", "name": "Coinbase", "src": "/logos/coinbase.svg", "type": "exchange" },
+    { "key": "binance", "name": "Binance", "src": "/logos/binance.svg", "type": "exchange" },
+    { "key": "kraken", "name": "Kraken", "src": "/logos/kraken.svg", "type": "exchange" },
+    { "key": "bybit", "name": "Bybit", "src": "/logos/bybit.svg", "type": "exchange" },
+    { "key": "bitstamp", "name": "Bitstamp", "src": "/logos/bitstamp.svg", "type": "exchange" },
+    { "key": "ftx", "name": "FTX", "src": "/logos/ftx.svg", "type": "exchange" },
+    { "key": "gemini", "name": "Gemini", "src": "/logos/gemini.svg", "type": "exchange" }
+  ],
+  "journals": [
+    { "key": "tradeviz", "name": "TradesViz", "src": "/logos/tradeviz.svg", "type": "journal" },
+    { "key": "tradersync", "name": "TraderSync", "src": "/logos/tradersync.svg", "type": "journal" },
+    { "key": "tradezilla", "name": "TradeZilla", "src": "/logos/tradezilla.svg", "type": "journal" },
+    { "key": "journalytix", "name": "Journalytix", "src": "/logos/journalytix.svg", "type": "journal" },
+    { "key": "edgewonk", "name": "Edgewonk", "src": "/logos/edgewonk.svg", "type": "journal" },
+    { "key": "trademetria", "name": "Trademetria", "src": "/logos/trademetria.svg", "type": "journal" }
+  ]
+}

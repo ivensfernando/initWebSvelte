@@ -38,14 +38,14 @@
     display: grid;
     gap: 24px;
     margin-top: 32px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
   .testimonial-card {
     background: #fff;
     border-radius: 20px;
     padding: 24px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 20px 36px rgba(15, 23, 42, 0.12);
     display: grid;
     gap: 16px;
   }
@@ -77,7 +77,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(37, 99, 235, 0.15);
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
     color: var(--color-primary);
     display: grid;
     place-items: center;

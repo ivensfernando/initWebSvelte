@@ -1,11 +1,14 @@
 <script>
+  import AppLogoChip from './AppLogoChip.svelte';
+  import logos from '$lib/content/logo-registry.json';
+
   export let step;
   export let index = 0;
 
   const isReversed = index % 2 === 1;
 </script>
 
-<div class:reversed={isReversed} class="step-card">
+<div class:reversed={isReversed} class="step-card step-bg">
   <div class="step-content">
     <p class="step-label">Step {step.number}</p>
     <h3>{step.title}</h3>
@@ -17,8 +20,8 @@
   <div class="step-media">
     {#if step.mediaType === 'logos'}
       <div class="logo-row">
-        {#each step.logos as logo}
-          <span class="logo-chip">{logo}</span>
+        {#each logos.signalSources as logo}
+          <AppLogoChip name={logo.name} src={logo.src} />
         {/each}
       </div>
     {:else if step.mediaType === 'code'}
@@ -27,8 +30,8 @@
       </div>
     {:else if step.mediaType === 'logos-grid'}
       <div class="logo-grid">
-        {#each step.logos as logo}
-          <span class="logo-tile">{logo}</span>
+        {#each logos.connections as logo}
+          <AppLogoChip name={logo.name} src={logo.src} />
         {/each}
       </div>
     {:else if step.mediaType === 'screenshot'}
@@ -37,19 +40,33 @@
       </div>
     {/if}
   </div>
-  <div class="watermark">{step.number}</div>
+  <div class="step-watermark">{step.number}</div>
 </div>
 
 <style>
   .step-card {
     position: relative;
     padding: clamp(24px, 4vw, 48px);
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.7));
+    border-radius: 20px;
     display: grid;
     gap: 32px;
     overflow: hidden;
     container-type: inline-size;
+  }
+
+  .step-bg {
+    background:
+      radial-gradient(1200px circle at top right, rgba(0, 150, 255, 0.08), transparent 40%),
+      linear-gradient(135deg, #f7fbff, #eef4fb);
+  }
+
+  .step-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(transparent 95%, rgba(0, 0, 0, 0.02) 100%);
+    opacity: 0.2;
+    pointer-events: none;
   }
 
   .step-content {
@@ -78,26 +95,18 @@
     display: grid;
     place-items: center;
     z-index: 1;
+    width: 100%;
   }
 
   .logo-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 12px;
     width: 100%;
   }
 
-  .logo-chip {
-    padding: 10px 14px;
-    border-radius: 999px;
-    background: #fff;
-    box-shadow: var(--shadow-sm);
-    font-weight: 600;
-    font-size: 0.85rem;
-  }
-
   .code-card {
-    width: min(360px, 100%);
+    width: min(320px, 100%);
     margin: 0 auto;
   }
 
@@ -113,38 +122,29 @@
 
   .logo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
     width: 100%;
-  }
-
-  .logo-tile {
-    background: #fff;
-    border-radius: 14px;
-    padding: 16px;
-    text-align: center;
-    font-weight: 600;
-    box-shadow: var(--shadow-sm);
   }
 
   .screenshot {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 24px;
     background: linear-gradient(135deg, #1e3a8a, #0f172a);
     color: #fff;
     display: grid;
     place-items: center;
     font-weight: 600;
+    min-height: 220px;
   }
 
-  .watermark {
+  .step-watermark {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: clamp(56px, 8vw, 120px);
-    font-weight: 700;
+    right: 16px;
+    top: 16px;
+    font-size: clamp(64px, 10vw, 140px);
     opacity: 0.06;
-    color: #0f172a;
+    font-weight: 700;
     z-index: 0;
   }
 

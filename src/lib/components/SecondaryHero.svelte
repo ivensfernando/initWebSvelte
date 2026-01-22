@@ -46,7 +46,7 @@
   .screenshot {
     width: min(520px, 100%);
     border-radius: 24px;
-    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    background: linear-gradient(135deg, #0f172a, var(--color-primary));
     color: #fff;
     display: grid;
     place-items: center;

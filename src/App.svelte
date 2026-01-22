@@ -1,4 +1,5 @@
 <script>
+  import { onMount, onDestroy } from 'svelte';
   import Header from './lib/components/Header.svelte';
   import Hero from './lib/components/Hero.svelte';
   import HowItWorksIntro from './lib/components/HowItWorksIntro.svelte';
@@ -13,21 +14,40 @@
   import Testimonials from './lib/components/Testimonials.svelte';
   import FinalCtaBand from './lib/components/FinalCtaBand.svelte';
   import Footer from './lib/components/Footer.svelte';
+
+  let currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
+
+  const updatePath = (event) => {
+    currentPath = event?.detail?.path ?? window.location.pathname;
+  };
+
+  onMount(() => {
+    updatePath();
+    window.addEventListener('popstate', updatePath);
+  });
+
+  onDestroy(() => {
+    window.removeEventListener('popstate', updatePath);
+  });
+
+  const isHome = () => currentPath === '/';
 </script>
 
-<Header />
+<Header on:navigate={updatePath} />
 <main>
-  <Hero />
-  <HowItWorksIntro />
-  <HowItWorksSteps />
-  <TryFreeCta />
-  <AudienceGrid />
-  <FeatureGrid />
-  <SecondaryHero />
-  <SocialProofAndComparisons />
-  <JournalingPlatforms />
-  <VideoBanner />
-  <Testimonials />
-  <FinalCtaBand />
+  {#if isHome()}
+    <Hero />
+    <HowItWorksIntro />
+    <HowItWorksSteps />
+    <TryFreeCta />
+    <AudienceGrid />
+    <FeatureGrid />
+    <SecondaryHero />
+    <SocialProofAndComparisons />
+    <JournalingPlatforms />
+    <VideoBanner />
+    <Testimonials />
+    <FinalCtaBand />
+  {/if}
 </main>
 <Footer />

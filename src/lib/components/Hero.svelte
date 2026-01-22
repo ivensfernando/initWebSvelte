@@ -30,7 +30,6 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
-      <p class="eyebrow">AUTOMATE FROM SIGNAL TO EXECUTION</p>
       <h1>{hero.title}</h1>
       <p class="hero-description">{hero.description}</p>
       <form
@@ -92,20 +91,13 @@
     font-size: var(--h1);
     margin-bottom: 16px;
     letter-spacing: -0.02em;
+    color: #fff;
   }
 
   .hero-description {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 24px;
     font-size: clamp(15px, 1.4vw, 18px);
-  }
-
-  .eyebrow {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.7);
   }
 
   .hero-form {

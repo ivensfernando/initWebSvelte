@@ -40,10 +40,12 @@
   }
 
   .metric {
-    background: #0b132b;
+    background: #1b2d22;
     color: #fff;
     padding: 24px;
     border-radius: 16px;
+    border: 1px solid #000;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   }
 
   .value {
@@ -61,6 +63,7 @@
     background: #ffffff;
     border-radius: 20px;
     padding: 32px;
+    border: 1px solid #000;
     box-shadow: var(--shadow-sm);
   }
 

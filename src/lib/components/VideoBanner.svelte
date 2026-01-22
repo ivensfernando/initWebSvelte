@@ -34,10 +34,10 @@
 <style>
   .banner {
     width: 100%;
-    border: none;
+    border: 1px solid #000;
     border-radius: 32px;
     padding: clamp(24px, 4vw, 40px);
-    background: #0f172a;
+    background: #1b2d22;
     color: #fff;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@
     gap: 20px;
     text-align: left;
     margin-top: 32px;
-    box-shadow: 0 24px 40px rgba(15, 23, 42, 0.3);
+    box-shadow: var(--shadow-lg);
   }
 
   .banner-content h3 {

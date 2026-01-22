@@ -35,7 +35,8 @@
     padding: 24px;
     border-radius: 16px;
     background: #fff;
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #000;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
     display: grid;
     gap: 12px;
   }

@@ -46,11 +46,13 @@
   .screenshot {
     width: min(520px, 100%);
     border-radius: 24px;
-    background: linear-gradient(135deg, #0f172a, var(--color-primary));
+    background: linear-gradient(135deg, #1b2d22, var(--color-primary));
     color: #fff;
     display: grid;
     place-items: center;
     font-weight: 600;
+    border: 1px solid #000;
+    box-shadow: var(--shadow-sm);
   }
 
   @media (min-width: 900px) {

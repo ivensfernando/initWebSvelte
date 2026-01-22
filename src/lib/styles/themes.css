@@ -1,15 +1,7 @@
 :root {
-  --color-primary: #16a34a;
+  --color-primary: #2f4f3a;
   --color-bg: #ffffff;
-  --color-surface: #f0fdf4;
-  --color-text: #052e16;
-  --color-muted: #166534;
-}
-
-[data-theme='blue'] {
-  --color-primary: #2563eb;
-  --color-bg: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #0f172a;
-  --color-muted: #64748b;
+  --color-surface: #e4f3dc;
+  --color-text: #1b2d22;
+  --color-muted: #3f5e49;
 }

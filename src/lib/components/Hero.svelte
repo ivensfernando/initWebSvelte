@@ -76,7 +76,7 @@
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #0b132b, #111827);
+    background: linear-gradient(135deg, #1b2d22, #2f4f3a);
     color: var(--color-bg);
     padding: 96px 0;
     position: relative;
@@ -122,7 +122,7 @@
   .input-shell input {
     width: 100%;
     border-radius: 999px;
-    border: none;
+    border: 1px solid #000;
     padding: 12px 44px 12px 20px;
     font-size: 1rem;
   }
@@ -132,7 +132,7 @@
     right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(15, 23, 42, 0.5);
+    color: rgba(0, 0, 0, 0.6);
     font-size: 1rem;
   }
 
@@ -156,13 +156,13 @@
   }
 
   .video-preview {
-    background: #0f172a;
+    background: #1b2d22;
     border-radius: 20px;
     width: min(520px, 100%);
     display: grid;
     place-items: center;
     position: relative;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
   }
 
@@ -186,7 +186,7 @@
     position: absolute;
     right: 24px;
     bottom: 24px;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(0, 0, 0, 0.85);
     color: #fff;
     padding: 12px 18px;
     border-radius: 12px;

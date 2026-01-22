@@ -49,7 +49,7 @@
 <header class:shadow={hasShadow}>
   <div class="container nav">
     <a class="logo" href="/">
-      <span class="logo-mark" aria-hidden="true"></span>
+      <img class="logo-mark" src="/logos/bidiinlogo.png" alt="BidiinPost logo" />
       <span>BidiinPost</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
@@ -123,9 +123,9 @@
   .logo-mark {
     width: 36px;
     height: 36px;
-    border-radius: 10px;
-    background: var(--color-primary);
+    border-radius: 8px;
     display: inline-block;
+    object-fit: contain;
   }
 
   .nav-links {

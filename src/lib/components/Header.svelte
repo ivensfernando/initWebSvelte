@@ -152,7 +152,7 @@
   }
 
   .nav-links a.active {
-    color: var(--color-primary);
+    color: var(--brand-500);
     font-weight: 600;
   }
 

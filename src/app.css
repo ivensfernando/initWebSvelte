@@ -75,7 +75,7 @@ main {
 }
 
 .btn.primary {
-  background: linear-gradient(90deg, var(--btn-grad-start), var(--btn-grad-end));
+  background: var(--brand-gradient);
   color: #fff;
   border: 1px solid transparent;
   box-shadow: var(--btn-shadow);

@@ -113,9 +113,9 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 52px;
-    min-height: 52px;
-    padding-block: 6px;
+    height: 64px;
+    min-height: 64px;
+    padding-block: 8px;
     padding-inline: 12px;
   }
 
@@ -127,8 +127,8 @@
   }
 
   .logo-mark {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     object-fit: contain;
   }
@@ -187,14 +187,14 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 56px;
-      min-height: 56px;
+      height: 72px;
+      min-height: 72px;
       padding-inline: 16px;
     }
 
     .logo-mark {
-      width: 44px;
-      height: 44px;
+      width: 56px;
+      height: 56px;
     }
   }
 

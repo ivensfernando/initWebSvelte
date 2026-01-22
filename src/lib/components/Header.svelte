@@ -108,7 +108,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 110px;
+    height: 140px;
   }
 
   .logo {
@@ -122,8 +122,8 @@
   }
 
   .logo-mark {
-    width: 140px;
-    height: 140px;
+    width: 170px;
+    height: 170px;
     border-radius: 14px;
     display: inline-block;
     object-fit: contain;
@@ -177,7 +177,7 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 120px;
+      height: 150px;
     }
   }
 

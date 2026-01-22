@@ -2,10 +2,10 @@ import { writable } from 'svelte/store';
 
 const getInitialTheme = () => {
   if (typeof window === 'undefined') {
-    return 'blue';
+    return 'green';
   }
 
-  return localStorage.getItem('theme') || 'blue';
+  return localStorage.getItem('theme') || 'green';
 };
 
 export const theme = writable(getInitialTheme());

@@ -1,15 +1,15 @@
 :root {
-  --color-primary: #2563eb;
-  --color-bg: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #0f172a;
-  --color-muted: #64748b;
-}
-
-[data-theme='green'] {
   --color-primary: #16a34a;
   --color-bg: #ffffff;
   --color-surface: #f0fdf4;
   --color-text: #052e16;
   --color-muted: #166534;
+}
+
+[data-theme='blue'] {
+  --color-primary: #2563eb;
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
 }

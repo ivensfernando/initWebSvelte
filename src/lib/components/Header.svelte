@@ -60,6 +60,7 @@
   <div class="container nav">
     <a class="logo" href="/">
       <img class="logo-mark" src="/logos/bidiinlogo.png" alt="BidiinPost logo" />
+      <span class="logo-text">BidiinPost</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       {#each navLinks as link}
@@ -108,7 +109,9 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
-    height: 170px;
+    height: 52px;
+    min-height: 52px;
+    padding-block: 6px;
   }
 
   .logo {
@@ -118,27 +121,31 @@
     font-weight: 700;
     color: var(--color-text);
     text-decoration: none;
-    font-size: 1.2rem;
   }
 
   .logo-mark {
-    width: clamp(140px, 12vw, 190px);
-    height: clamp(140px, 12vw, 190px);
-    border-radius: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     display: inline-block;
     object-fit: contain;
   }
 
+  .logo-text {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
   .nav-links {
     display: none;
-    gap: 32px;
+    gap: 20px;
     justify-content: center;
   }
 
   .nav-links a {
     color: #000;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     font-weight: 600;
     transition: color 0.2s ease;
   }
@@ -159,6 +166,12 @@
     align-items: center;
   }
 
+  .nav-actions .btn {
+    height: 36px;
+    padding: 0 16px;
+    font-size: 0.875rem;
+  }
+
   .menu-toggle {
     border: none;
     background: transparent;
@@ -177,7 +190,17 @@
 
   @media (min-width: 768px) {
     .nav {
-      height: 180px;
+      height: 56px;
+      min-height: 56px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-size: 1.125rem;
     }
   }
 
@@ -185,6 +208,10 @@
     .nav-links,
     .nav-actions {
       display: flex;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
     }
 
     .menu-toggle {

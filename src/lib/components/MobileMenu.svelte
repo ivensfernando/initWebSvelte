@@ -96,14 +96,14 @@
   }
 
   nav a {
-    color: var(--color-muted);
+    color: #000;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
   }
 
   nav a:hover {
-    color: var(--color-primary);
+    color: #000;
   }
 
   nav a.active {
@@ -111,7 +111,7 @@
   }
 
   nav a.emphasis {
-    color: color-mix(in srgb, var(--color-primary) 80%, transparent);
+    color: #000;
   }
 
   .actions {

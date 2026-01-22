@@ -36,16 +36,22 @@
     display: grid;
     gap: 8px;
     height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .feature-icon {
     width: 32px;
     height: 32px;
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.15);
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
     color: var(--color-primary);
     display: grid;
     place-items: center;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
   }
 
   @media (min-width: 1024px) {

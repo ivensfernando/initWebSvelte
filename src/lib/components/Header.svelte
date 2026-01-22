@@ -1,6 +1,8 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
+  import { page } from '$app/stores';
   import { navLinks } from '../content/home.js';
+  import { theme } from '../stores/theme';
   import MobileMenu from './MobileMenu.svelte';
 
   let menuOpen = false;
@@ -33,6 +35,9 @@
   onDestroy(() => {
     window.removeEventListener('scroll', updateShadow);
   });
+
+  $: currentPath = $page.url.pathname;
+  const isActive = (href) => currentPath === href;
 </script>
 
 <header class:shadow={hasShadow}>
@@ -42,11 +47,25 @@
       <span>BidiinPost</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      {#each navLinks as link}
-        <a href={link.href}>{link.label}</a>
+      {#each navLinks as link, index}
+        <a
+          href={link.href}
+          class:active={isActive(link.href)}
+          class:emphasis={index === 0 && !isActive(link.href)}
+        >
+          {link.label}
+        </a>
       {/each}
     </nav>
     <div class="nav-actions">
+      <div class="theme-switch">
+        <button class="theme-btn" on:click={() => theme.set('green')} type="button">
+          Green Mode
+        </button>
+        <button class="theme-btn" on:click={() => theme.set('blue')} type="button">
+          Blue Mode
+        </button>
+      </div>
       <a class="btn secondary" href="/login">Login</a>
       <a class="btn primary" href="/register">Register</a>
     </div>
@@ -99,7 +118,7 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: var(--color-primary);
     display: inline-block;
   }
 
@@ -110,16 +129,47 @@
   }
 
   .nav-links a {
-    color: var(--color-text);
+    color: var(--color-muted);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-links a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .nav-links a.emphasis {
+    color: color-mix(in srgb, var(--color-primary) 80%, transparent);
   }
 
   .nav-actions {
     display: none;
     gap: 12px;
     justify-content: flex-end;
+    align-items: center;
+  }
+
+  .theme-switch {
+    display: flex;
+    gap: 8px;
+  }
+
+  .theme-btn {
+    border: 1px solid rgba(15, 23, 42, 0.2);
+    background: #fff;
+    color: var(--color-text);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   .menu-toggle {

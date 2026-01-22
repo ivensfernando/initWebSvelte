@@ -1,16 +1,11 @@
 :root {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #0f172a;
-  background: #ffffff;
-  --color-bg: #ffffff;
-  --color-text: #0f172a;
-  --color-muted: #6b7280;
-  --color-primary: #2563eb;
-  --color-surface: #f8fafc;
+  color: var(--color-text);
+  background: var(--color-bg);
   --color-hero: #0b132b;
   --shadow-sm: 0 12px 24px rgba(15, 23, 42, 0.08);
-  --h1: clamp(28px, 3.2vw, 52px);
-  --h2: clamp(22px, 2.2vw, 34px);
+  --h1: clamp(28px, 3vw, 52px);
+  --h2: clamp(22px, 2vw, 34px);
   --body: clamp(14px, 1.2vw, 16px);
 }
 
@@ -81,7 +76,7 @@ main {
 .btn.primary {
   background: var(--color-primary);
   color: #fff;
-  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .btn.secondary {
@@ -109,6 +104,11 @@ main {
 
 .dashboard-preview {
   aspect-ratio: 16 / 9;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .sr-only {

@@ -35,7 +35,7 @@
   .banner {
     width: 100%;
     border: none;
-    border-radius: 28px;
+    border-radius: 32px;
     padding: clamp(24px, 4vw, 40px);
     background: #0f172a;
     color: #fff;
@@ -45,6 +45,7 @@
     gap: 20px;
     text-align: left;
     margin-top: 32px;
+    box-shadow: 0 24px 40px rgba(15, 23, 42, 0.3);
   }
 
   .banner-content h3 {

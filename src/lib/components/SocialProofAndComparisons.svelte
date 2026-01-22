@@ -2,7 +2,7 @@
   import { socialProof, comparisonGuides } from '../content/home.js';
 </script>
 
-<section class="section">
+<section class="section surface">
   <div class="container social-proof">
     <div class="metrics">
       {#each socialProof as metric}
@@ -14,7 +14,7 @@
     </div>
     <div class="comparisons">
       {#each comparisonGuides as guide}
-        <div>
+        <div class="comparison-copy">
           <h3>{guide.title}</h3>
           <p>{guide.description}</p>
         </div>
@@ -40,7 +40,7 @@
   }
 
   .metric {
-    background: var(--color-hero);
+    background: #0b132b;
     color: #fff;
     padding: 24px;
     border-radius: 16px;
@@ -58,9 +58,10 @@
   .comparisons {
     display: grid;
     gap: 24px;
-    background: #f8fafc;
+    background: #ffffff;
     border-radius: 20px;
     padding: 32px;
+    box-shadow: var(--shadow-sm);
   }
 
   .comparison-links {

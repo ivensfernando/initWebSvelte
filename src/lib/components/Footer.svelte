@@ -43,7 +43,7 @@
 
 <style>
   .footer {
-    background: #0f172a;
+    background: linear-gradient(135deg, #0b132b, #111827);
     color: #e2e8f0;
     padding: 64px 0 40px;
   }
@@ -69,7 +69,7 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: var(--color-primary);
     display: inline-block;
   }
 
@@ -88,8 +88,8 @@
   .social-icon {
     width: 32px;
     height: 32px;
-    border-radius: 50%;
-    border: 1px solid rgba(226, 232, 240, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
     display: grid;
     place-items: center;
     font-weight: 600;
@@ -98,7 +98,7 @@
 
   .columns {
     display: grid;
-    gap: 24px;
+    gap: 20px;
   }
 
   .columns h4 {

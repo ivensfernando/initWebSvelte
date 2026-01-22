@@ -63,8 +63,8 @@
     <div class="hero-media">
       <div class="video-preview video-card">
         <span class="play-button" aria-hidden="true">▶</span>
-        <div class="video-caption">Watch the 90-second platform tour</div>
       </div>
+      <p class="video-caption">Watch the 90-second platform tour</p>
     </div>
   </div>
   {#if toastVisible}
@@ -76,7 +76,7 @@
 
 <style>
   .hero {
-    background: var(--color-hero);
+    background: linear-gradient(135deg, #0b132b, #111827);
     color: var(--color-bg);
     padding: 96px 0;
     position: relative;
@@ -150,6 +150,9 @@
   .hero-media {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
   .video-preview {
@@ -175,12 +178,8 @@
   }
 
   .video-caption {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .toast {

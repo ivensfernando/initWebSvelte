@@ -160,7 +160,7 @@
     color: #000;
   }
 
-  .nav-links a.is-active {
+  .nav-links a.active {
     color: var(--brand-500);
     font-weight: 600;
     background: color-mix(in srgb, var(--brand-500) 12%, transparent);

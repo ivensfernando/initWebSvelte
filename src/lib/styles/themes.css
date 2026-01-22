@@ -1,21 +1,13 @@
 :root {
-  --brand-50: #f2fbf3;
-  --brand-100: #e3f5e6;
-  --brand-200: #c4ebcf;
-  --brand-500: #22c55e;
-  --brand-700: #15803d;
-  --brand-900: #0b3d1b;
-  --text: #1b2d22;
-  --muted: #3f5e49;
-  --bg: #ffffff;
-  --card: #f7faf6;
-  --border: #d9e6da;
-  --brand-gradient: linear-gradient(90deg, var(--brand-500), var(--brand-700));
-  --color-primary: var(--brand-500);
-  --color-bg: var(--bg);
-  --color-surface: var(--card);
-  --color-text: var(--text);
-  --color-muted: var(--muted);
+  --color-primary: #2f4f3a;
+  --color-bg: #ffffff;
+  --color-surface: #e4f3dc;
+  --color-text: #1b2d22;
+  --color-muted: #3f5e49;
+  --brand-500: #16a34a;
+  --brand-gradient: linear-gradient(90deg, var(--btn-grad-start), var(--btn-grad-end));
+  --btn-grad-start: #22c55e;
+  --btn-grad-end: #15803d;
   --btn-shadow: 0 10px 20px rgba(22, 163, 74, 0.25);
 }
 

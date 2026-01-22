@@ -77,7 +77,7 @@ main {
 .btn.primary {
   background: var(--color-primary);
   color: #fff;
-  border: 1px solid #000;
+  border: 1px solid var(--color-primary);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
 }
 

@@ -57,8 +57,8 @@
 
   .step-bg {
     background:
-      radial-gradient(1200px circle at top right, rgba(47, 79, 58, 0.12), transparent 40%),
-      linear-gradient(135deg, #f4fbef, #e3f1db);
+      radial-gradient(1200px circle at top right, color-mix(in srgb, var(--brand-200) 45%, transparent), transparent 40%),
+      linear-gradient(135deg, var(--brand-50), var(--brand-100));
   }
 
   .step-bg::after {

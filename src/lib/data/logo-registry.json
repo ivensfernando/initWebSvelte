@@ -1,0 +1,21 @@
+{
+  "brokers": {
+    "tradovate": { "label": "Tradovate", "src": "/logos/tradovate.svg" },
+    "projectx": { "label": "ProjectX", "src": "/logos/projectx.svg" },
+    "tradingstation": { "label": "TradeStation", "src": "/logos/tradestation.svg" },
+    "alpaca": { "label": "Alpaca", "src": "/logos/alpaca.svg" },
+    "robinhood": { "label": "Robinhood", "src": "/logos/robinhood.svg" },
+    "ibkr": { "label": "Interactive Brokers", "src": "/logos/ibkr.svg", "badge": "Beta" },
+    "etrade": { "label": "E*TRADE", "src": "/logos/etrade.svg" },
+    "tastytrade": { "label": "tastytrade", "src": "/logos/tastytrade.svg" },
+    "webull": { "label": "Webull", "src": "/logos/webull.svg" },
+    "tradier": { "label": "Tradier", "src": "/logos/tradier.svg" },
+    "kraken": { "label": "Kraken", "src": "/logos/kraken.svg" },
+    "binance": { "label": "Binance", "src": "/logos/binance.svg" },
+    "bybit": { "label": "Bybit", "src": "/logos/bybit.svg" },
+    "crypto_com": { "label": "Crypto.com", "src": "/logos/crypto-com.svg", "badge": "Beta" },
+    "traderspost_paper": { "label": "TradersPost Paper", "src": "/logos/paper.svg" },
+    "coinbase": { "label": "Coinbase", "src": "/logos/coinbase.svg" },
+    "ninjatrader": { "label": "NinjaTrader", "src": "/logos/ninjatrader.svg" }
+  }
+}

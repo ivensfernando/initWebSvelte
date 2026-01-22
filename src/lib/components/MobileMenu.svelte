@@ -4,6 +4,7 @@
 
   export let menuOpen = false;
   export let navLinks = [];
+  export let onNavigate = () => {};
 
   const dispatch = createEventDispatcher();
   let panel;
@@ -33,7 +34,8 @@
     window.removeEventListener('popstate', updatePath);
   });
 
-  const isActive = (href) => currentPath === href;
+  const isActive = (href) =>
+    href === '/assets' ? currentPath.startsWith('/assets') : currentPath === href;
 
   $: if (menuOpen) {
     tick().then(() => {
@@ -53,9 +55,12 @@
     {#each navLinks as link, index}
       <a
         href={link.href}
-        class:active={isActive(link.href)}
+        class:is-active={isActive(link.href)}
         class:emphasis={index === 0 && !isActive(link.href)}
-        on:click={closeMenu}
+        on:click={(event) => {
+          onNavigate(event, link.href);
+          closeMenu();
+        }}
       >
         {link.label}
       </a>
@@ -107,8 +112,8 @@
     color: #000;
   }
 
-  nav a.active {
-    color: var(--color-primary);
+  nav a.is-active {
+    color: var(--brand-500);
   }
 
   nav a.emphasis {
